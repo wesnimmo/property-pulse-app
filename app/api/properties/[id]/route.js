@@ -17,14 +17,3 @@ export const GET = async (request, { params }) => {
     }
 }
 
-export const POST = async (request) => {
-    try {
-        const formData = await request.formData()
-        console.log(formData.get('name'))
-        return new Response(JSON.stringify({message: 'success'}), { status: 200 })
-
-    } catch (error) {
-        
-        return new Response('Failed to Add Property', { status: 500 })
-    }
-}

@@ -100,12 +100,14 @@ const PropertyAddForm = () => {
 
     const handleImageChange = (e) => {
         const { files } = e.target
-        //console.log('here is the files-->',files)
+        console.log('here is the files-->',files)
+        //files--> FileList { {name: '5.jpg', lastModified: 1234, size: 6789, ...}, {name: '6.jpg', ...}, }
 
         // Clone images array
         const updatedImages = [...fields.images]
 
         // Add new files to the array
+        // ...which creates an array of objects
         for ( const file of files){
             updatedImages.push(file)
         }
@@ -114,10 +116,11 @@ const PropertyAddForm = () => {
         setFields(prevFields => ({
             ...prevFields,
             images: updatedImages
+            //...array of objects
         }))
     }
 
-     //console.log('here is the state fields-->', fields)
+     console.log('here is the state fields.images-->', fields.images)
 
     return mounted &&
     //instead of adding an onSubmit to the form we can do it this way:
@@ -521,7 +524,7 @@ const PropertyAddForm = () => {
           <input
             type="text"
             id="seller_name"
-            name="seller_info.name."
+            name="seller_info.name"
             className="border rounded w-full py-2 px-3"
             placeholder="Name"
             value={fields.seller_info.name}
@@ -574,6 +577,7 @@ const PropertyAddForm = () => {
             accept="image/*"
             multiple
             onChange={handleImageChange}
+            required
           />
         </div>
 
