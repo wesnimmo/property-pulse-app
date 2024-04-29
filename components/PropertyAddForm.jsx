@@ -5,28 +5,28 @@ import { useState, useEffect } from 'react'
 const PropertyAddForm = () => {
     const [mounted, setMounted] = useState(false)
     const [fields, setFields] = useState({
-        type: 'Apartment',
-        name: 'Test Property',
+        type: '',
+        name: '',
         description: '',
         location: {
             street: '',
-            city: 'Test City',
-            state: 'Test State',
+            city: '',
+            state: '',
             zipcode: '',
         },
-        beds: '3',
-        baths: '2',
-        square_feet: '1800',
-        amenities: ['24/7 Security'],
+        beds: '',
+        baths: '',
+        square_feet: '',
+        amenities: [],
         rates: {
             weekly: '',
-            monthly: '2000',
+            monthly: '',
             nightly: '',
         },
         seller_info: {
             name: '',
-            email: 'test@test.com',
-            phone: ''
+            email:'',
+            phone:''
         },
         images: [],
     })
@@ -120,7 +120,7 @@ const PropertyAddForm = () => {
         }))
     }
 
-     console.log('here is the state fields.images-->', fields.images)
+     //console.log('here is the state fields.images-->', fields.images)
 
     return mounted &&
     //instead of adding an onSubmit to the form we can do it this way:

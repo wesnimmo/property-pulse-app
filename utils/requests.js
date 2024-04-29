@@ -9,7 +9,8 @@ async function fetchProperties(){
             return []
         }
 
-        const res = await fetch(`${apiDomain}/properties`)
+        // {cache: 'no-store} will ensure changes sent from client to DB will update changes ON THE CLIENT 
+        const res = await fetch(`${apiDomain}/properties`, {cache: 'no-store'})
 
         if(!res.ok){
             throw new Error('Failed to fetch data')

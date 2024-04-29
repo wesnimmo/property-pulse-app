@@ -28,11 +28,11 @@ const Navbar = () => {
       setAuthProviders()
     }, [])
 
-    // console.log('Here is the providers-->', providers)
+    console.log('Here is the providers-->', providers)
 
     // anytime you want to get a session in a client-side component
     // ...we use useSession imported above
-    //console.log(session)
+    console.log('here is session-->',session)
     //console.log('here is profileImage-->',profileImage)
 
     return (

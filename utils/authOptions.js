@@ -38,7 +38,7 @@ export const authOptions = {
             return true
         },
         // Modifies the session object
-        async sessionStorage({session}){
+        async session({session}){
             // 1. Get user from the database
             const user = await User.findOne({ email: session.user.email })
             // 2. Assign the user id to the session
